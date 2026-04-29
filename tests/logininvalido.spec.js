@@ -15,4 +15,7 @@ test('Login automatizado en OrangeHRM demo', async ({ page }) => {
     // 3) Hacer clic en el botón de login
     await page.click('button[type="submit"]');
 
+    // 4) validar el texto Invalid credentials
+    await expect(page.getByText('Invalid credentials')).toBeVisible();
+
 }) ;
