@@ -10,7 +10,7 @@ test('Login automatizado en OrangeHRM demo', async ({ page }) => {
 
     // 2) Rellenar usuario y contraseña
     await page.getByPlaceholder('Username').fill('Admin');
-    await page.getByPlaceholder('Password').fill('admin144');
+    await page.getByPlaceholder('Password').fill('admin123');
     
     // 3) Hacer clic en el botón de login
     await page.click('button[type="submit"]');
@@ -22,7 +22,14 @@ test('Login automatizado en OrangeHRM demo', async ({ page }) => {
     await page.getByRole('link', { name: 'Employee List' }).click();
 
     // 6) hacer click en el campo Employee Name
-    await page.getByPlaceholder('Type for hints...').click();
+   // await page.getByPlaceholder('Type for hints...').click();
 
     // 7) escribir el nombre del empleado
-    await page.getByPlaceholder('Type for hints...').fill('0295');
+    await page.getByPlaceholder('Type for hints...').first().fill('Wilcox');
+
+    // 8) hacer click en el boton search
+    await page.getByRole('button', { name: 'Search' }).click(); 
+
+    
+
+}) ;

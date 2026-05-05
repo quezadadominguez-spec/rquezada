@@ -27,10 +27,10 @@ test('Login automatizado en OrangeHRM demo', async ({ page }) => {
     await page.getByPlaceholder('Last Name').fill('Dominguez');
 
     // 7) seleccionar checkbox de Create Login Details
-    await page.getByText('Create Login Details').click();
+   // await page.getByText('Create Login Details').click();
    
     // 8) completar campo oxd-input oxd-input--active
-    await page.locator('.oxd-input').nth(4).fill('Reynaldo'); // Reemplaza 'Reynaldo123' con el valor que deseas ingresar en Employee Id
+   // await page.locator('.oxd-input').nth(4).fill('Reynaldo'); // Reemplaza 'Reynaldo123' con el valor que deseas ingresar en Employee Id
 
     // 9) completar el campo password y confirm password, este campo no es placeholder, es un input activo
     //await page.locator('.oxd-input').nth(5).fill('Reynaldo123'); // Reemplaza 'Reynaldo123' con el valor que deseas ingresar en Other Id
