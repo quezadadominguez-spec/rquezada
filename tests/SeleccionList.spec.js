@@ -33,5 +33,12 @@ test('Login automatizado en OrangeHRM demo', async ({ page }) => {
     // 9) editar el empleado localizador oxd-icon bi-pencil-fill
     await page.locator('.oxd-icon.bi-pencil-fill').click();
 
+    // 10) Abrir dropdown Marital Status
+    await page.locator(
+    "//label[text()='Marital Status']/following::div[contains(@class,'oxd-select-text')][2]"
+    ).click();
+
+    // Seleccionar opción Single
+    await page.locator("//span[text()='Single']").click();
 
 }) ;
