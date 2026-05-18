@@ -25,7 +25,7 @@ test('Login automatizado en OrangeHRM demo', async ({ page }) => {
    // await page.getByPlaceholder('Type for hints...').click();
 
     // 7) escribir el nombre del empleado
-    await page.getByPlaceholder('Type for hints...').first().fill('Wilcox');
+    await page.getByPlaceholder('Type for hints...').first().fill('Reynaldo');
 
     // 8) hacer click en el boton search
     await page.getByRole('button', { name: 'Search' }).click(); 
@@ -33,5 +33,17 @@ test('Login automatizado en OrangeHRM demo', async ({ page }) => {
     // 9) editar el empleado localizador oxd-icon bi-pencil-fill
     await page.locator('.oxd-icon.bi-pencil-fill').click();
 
+
+    // 10) Abrir dropdown Marital Status
+    await page.locator(
+    "//label[text()='Marital Status']/following::div[contains(@class,'oxd-select-text')][2]"
+    ).click();
+
+    // Seleccionar opción Single
+    await page.locator("//span[text()='Single']").click();
+
+    // click en el boton save
+    await page.getByRole('button', { name: 'Save' }).last().click();
+  
 
 }) ;
